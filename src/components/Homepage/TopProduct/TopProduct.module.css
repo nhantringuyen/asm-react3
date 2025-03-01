@@ -1,0 +1,35 @@
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.product-details h3 {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.product-details p {
+  font-size: 1em;
+  color: #555;
+}
+
+.sub-title {
+  font-size: 18px;
+  color: #777;
+}
+.sec-title {
+  font-size: 24px;
+}
