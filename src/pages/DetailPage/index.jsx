@@ -4,7 +4,8 @@ import { Button, Row, Col, Spinner } from "react-bootstrap";
 import { fetchProducts } from "../../services/api"; // Hàm fetch từ API
 import classes from "./ProductDetail.module.css";
 import ProductList from "../../components/ProductList";
-
+import { useDispatch } from "react-redux";
+import { ADD_CART } from "../../services/cartSlice";
 const ProductDetail = () => {
   const { productId } = useParams(); // Lấy id từ URL
   const [product, setProduct] = useState(null);
@@ -12,6 +13,8 @@ const ProductDetail = () => {
   const [selectedImage, setSelectedImage] = useState("");
   const [images , setImages] = useState([]);
   const [relatedProduct, setRelatedProduct] = useState(null);
+  const dispatch = useDispatch();
+
 
   useEffect(() => {
     const getProduct = async () => {
@@ -42,7 +45,20 @@ const ProductDetail = () => {
 
   if (loading) return <Spinner animation="border" className={classes["loading"]} />;
   if (!product) return <h2 className={classes["not-found"]}>Product not found</h2>;
+  const handleAddToCart = () => {
+    // console.log(product);
+    if (!product) return; // Kiểm tra nếu không có sản phẩm
 
+    const item = {
+      ...product,
+      quantity: 1, // Mặc định thêm 1 sản phẩm
+    };
+
+    console.log("Adding to cart:", item); // Debug xem item có đúng không
+    dispatch(ADD_CART(item)); // Dispatch action
+
+    alert("Sản phẩm đã được thêm vào giỏ hàng!");
+  };
   return (
       <div className={classes["product-detail"]}>
         <Row>
@@ -88,7 +104,7 @@ const ProductDetail = () => {
             </div>
 
             {/* Nút thêm vào giỏ hàng */}
-            <Button className={classes["add-to-cart"]}>Add to cart</Button>
+            <Button className={classes["add-to-cart"]} onClick={handleAddToCart}>Add to cart</Button>
           </Col>
         </Row>
 

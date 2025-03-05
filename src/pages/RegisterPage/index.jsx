@@ -33,24 +33,24 @@ const Register = () => {
     }
 
     // Lấy danh sách user từ localStorage
-    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let userArr = JSON.parse(localStorage.getItem("users")) || [];
 
     // Kiểm tra email đã tồn tại chưa
-    if (users.some((user) => user.email === email)) {
+    if (userArr.some((user) => user.email === email)) {
       setError("Email đã được sử dụng. Vui lòng chọn email khác.");
       return;
     }
 
     // Thêm user vào danh sách
-    users.push({ fullName, email, password, phone });
-    localStorage.setItem("users", JSON.stringify(users));
+    userArr.push({ fullName, email, password, phone });
+    localStorage.setItem("users", JSON.stringify(userArr));
 
     alert("Đăng ký thành công! Chuyển hướng đến trang đăng nhập...");
     navigate("/login");
   };
 
   return (
-      <Container className="d-flex justify-content-center align-items-center vh-100">
+      <div className="d-flex justify-content-center align-items-center vh-100 full-width">
         <Card style={{ width: "400px", padding: "20px" }}>
           <Card.Title className="text-center">Sign Up</Card.Title>
           {error && <Alert variant="danger">{error}</Alert>}
@@ -101,7 +101,7 @@ const Register = () => {
             </small>
           </div>
         </Card>
-      </Container>
+      </div>
   );
 };
 

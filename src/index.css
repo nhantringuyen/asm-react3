@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.full-width{
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  background-image: url("./assets/banner1.jpg");
+  background-size: cover;
+}
+.btn.btn-black{
+  background-color: #000;
+}
