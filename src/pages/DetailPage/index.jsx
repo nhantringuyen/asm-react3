@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Button, Row, Col, Spinner } from "react-bootstrap";
+import {Container, Row, Col, Spinner, Alert} from "react-bootstrap";
 import { fetchProducts } from "../../services/api"; // Hàm fetch từ API
 import classes from "./ProductDetail.module.css";
 import ProductList from "../../components/ProductList";
@@ -14,7 +14,8 @@ const ProductDetail = () => {
   const [images , setImages] = useState([]);
   const [relatedProduct, setRelatedProduct] = useState(null);
   const dispatch = useDispatch();
-
+  const [success, setSuccess] = useState("");
+  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     const getProduct = async () => {
@@ -43,23 +44,34 @@ const ProductDetail = () => {
     getProduct();
   }, [productId]); // Chạy lại khi ID thay đổi
 
-  if (loading) return <Spinner animation="border" className={classes["loading"]} />;
-  if (!product) return <h2 className={classes["not-found"]}>Product not found</h2>;
+  const handleDecrement = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  };
+
+  const handleIncrement = () => {
+    setQuantity(quantity + 1);
+  };
   const handleAddToCart = () => {
     // console.log(product);
     if (!product) return; // Kiểm tra nếu không có sản phẩm
 
     const item = {
       ...product,
-      quantity: 1, // Mặc định thêm 1 sản phẩm
+      quantity: quantity, // Mặc định thêm 1 sản phẩm
     };
 
     console.log("Adding to cart:", item); // Debug xem item có đúng không
     dispatch(ADD_CART(item)); // Dispatch action
 
-    alert("Sản phẩm đã được thêm vào giỏ hàng!");
+    // alert("Sản phẩm đã được thêm vào giỏ hàng!");
+    setSuccess("Thêm vào giỏ hàng thành công!");
   };
+  if (loading) return <Spinner animation="border" className={classes["loading"]} />;
+  if (!product) return <h2 className={classes["not-found"]}>Product not found</h2>;
   return (
+      <Container>
       <div className={classes["product-detail"]}>
         <Row>
           {/* Hình ảnh sản phẩm */}
@@ -97,14 +109,16 @@ const ProductDetail = () => {
             <p><strong>Category:</strong> {product.category}</p>
 
             {/* Chọn số lượng */}
-            <div className={classes["quantity-container"]}>
-              <Button variant="light">-</Button>
-              <span className={classes["quantity"]}>1</span>
-              <Button variant="light">+</Button>
+            <div className={classes["quantity-section"]}>
+              <p className={classes["quantity-label"]}>QUANTITY</p>
+              <div className={classes["quantity-controls"]}>
+                <button className={classes["quantity-btn"]} onClick={handleDecrement}>&#9664;</button>
+                <span className={classes["quantity-value"]}>{quantity}</span>
+                <button className={classes["quantity-btn"]} onClick={handleIncrement}>&#9654;</button>
+              </div>
+              <button className={classes["add-to-cart-btn"]} onClick={handleAddToCart}>Add to cart</button>
             </div>
-
-            {/* Nút thêm vào giỏ hàng */}
-            <Button className={classes["add-to-cart"]} onClick={handleAddToCart}>Add to cart</Button>
+            {success && <Alert variant="success">{success}</Alert>}
           </Col>
         </Row>
 
@@ -119,18 +133,10 @@ const ProductDetail = () => {
         {/* Sản phẩm liên quan */}
         <div className={classes["related-products"]}>
           <h3>Related Products</h3>
-          {/*<Row>*/}
-          {/*  {relatedProduct.map((related) => (*/}
-          {/*          <Col key={related._id.$oid} md={3} className={classes["related-item"]}>*/}
-          {/*            <img src={related.img1} alt={related.name} />*/}
-          {/*            <h4>{related.name}</h4>*/}
-          {/*            <p>{related.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} VND</p>*/}
-          {/*          </Col>*/}
-          {/*      ))}*/}
-          {/*</Row>*/}
-          <ProductList products={relatedProduct} />
+         <ProductList products={relatedProduct} />
         </div>
       </div>
+      </Container>
   );
 };
 

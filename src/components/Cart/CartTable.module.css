@@ -1,0 +1,36 @@
+table.table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+table.table thead.tableHeader th{
+    background-color: #f8f9fa;
+    padding: 20px 10px;
+    border: none;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 16px;
+}
+table.table tfoot tr td{
+    background-color: #f8f9fa;
+    padding: 20px 10px;
+}
+button.checkoutButton {
+    border: 1px solid black;
+    text-transform: uppercase;
+    background: none;
+    color: #000;
+}
+button.checkoutButton:hover {
+    background-color: black;
+    color: white;
+}
+button.continueShopping {
+    color: #b6b5b4;
+    font-style: italic;
+    text-decoration: none;
+}
+button.checkoutButton svg, button.continueShopping svg{
+    height: 16px;
+}

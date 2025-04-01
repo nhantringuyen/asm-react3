@@ -1,0 +1,106 @@
+button.button_messenger svg{
+    fill: #fff;
+    width: 30px;
+    height: 30px;
+}
+button.button_messenger{
+    bottom: 20px;
+    right: 40px;
+    background-color: #000;
+}
+.chatModal > div {
+    transform: none;
+    position: absolute;
+    bottom: 60px;
+    right: 40px;
+}
+.chatHeader {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
+    justify-content: space-between;
+}
+.chatBody {
+    height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding-right: 120px;
+    gap: 10px;
+}
+.chatApp{
+    padding: 5px;
+    background-color: #f9f9f9;
+    font-weight: 400;
+    font-style: italic;
+}
+.modal-title{
+    font-size: 18px;
+}
+.chatHeader > button{
+    display: none;
+}
+.messageContainer {
+    display: flex;
+}
+.userMessageWrap{
+    justify-content: right;
+}
+.userMessage {
+    background-color: #3b9eff;
+    color: white;
+    text-align: right;
+    padding: 10px 15px;
+    font-size: 14px;
+}
+.adminMessage {
+    background-color: #f1f1f1;
+    color: black;
+    font-style: italic;
+    padding: 10px 15px;
+    font-size: 14px;
+}
+.chatFooter {
+    padding: 0;
+    background-color: #ffffff;
+    border-top: 1px solid #ddd;
+}
+.userAvatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    overflow: hidden;
+    flex: 0 0 40px;
+}
+.userAvatar img{
+    max-width: 100%
+}
+.inputContainer {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    background: #f1f1f1;
+    padding: 5px 10px;
+    margin: 0
+}
+.chatInput {
+    flex-grow: 1;
+    border: none;
+    background: #fff;
+    font-size: 14px;
+    padding: 5px;
+    outline: none;
+    max-width: 230px;
+    border-radius: 0;
+}
+.icon {
+    margin-left: 10px;
+    color: gray;
+    cursor: pointer;
+}
+.chatSendBtn {
+    margin-left: 10px;
+}

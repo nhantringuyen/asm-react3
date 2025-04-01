@@ -1,0 +1,84 @@
+.navbarContainer {
+    width: 100%;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+.navSection {
+    display: flex;
+    align-items: center;
+}
+.navLink {
+    color: #212529;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1.2rem;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.navLink:hover {
+    color: #9a8a78;
+}
+.activeLink {
+    color: #cdaa7d !important;
+    font-style: italic;
+}
+.brandLink {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #212529;
+    text-decoration: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+.cartButton {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+.cartBadge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #dc3545;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.userDropdown {
+    background: transparent;
+    border: none;
+    color: #212529;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: pointer;
+}
+.dropdownToggle::after {
+    display: none;
+}
+.dropdownMenu {
+    min-width: 8rem;
+    padding: 0.5rem 0;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+.dropdownItem {
+    padding: 0.5rem 1rem;
+    color: #dc3545;
+    font-weight: 500;
+}
+.dropdownItem:hover {
+    background-color: #f8f9fa;
+}

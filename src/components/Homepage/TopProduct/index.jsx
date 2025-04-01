@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import { useDispatch } from "react-redux";
-// import { showPopup } from "../../../services/actions";
 import ProductList from "../../ProductList";
 import { fetchProducts } from "../../../services/api";
 import classes from "./TopProduct.module.css";
@@ -32,27 +30,6 @@ const TopProduct = () => {
       <h3 className={classes["sub-title"]}>MADE THE HARD WAY</h3>
       <h2 className={classes["sec-title"]}>TOP TRENDING PRODUCTS</h2>
       <ProductList products={products} isTopProduct={true} columns={4} />
-      {/* <div className={classes["product-list"]}>
-        {products.map((product) => (
-          <div
-            key={product._id.$oid}
-            className={classes["product-card"]}
-            onClick={() => dispatch(showPopup(product))}
-          >
-            <img
-              src={product.img1}
-              alt={product.name}
-              className={classes["product-image"]}
-            />
-            <div className={classes["product-details"]}>
-              <h3>{product.name}</h3>
-              <p className={classes["price"]}>
-                {formatPrice(product.price)} VND
-              </p>
-            </div>
-          </div>
-        ))}
-      </div> */}
     </section>
   );
 };

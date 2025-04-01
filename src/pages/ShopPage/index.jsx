@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { fetchProducts } from "../../services/api";
 import ProductList from "../../components/ProductList";
-import { Row, Col, Form, Pagination } from "react-bootstrap";
+import PageHeader from "../../components/PageHeader";
+import { Row, Container, Col, Form, Pagination } from "react-bootstrap";
 import classes from "./ShopPage.module.css";
 
 const ShopPage = () => {
@@ -43,7 +44,9 @@ const ShopPage = () => {
   const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
 
   return (
-      <div className={classes["shop-page"]}>
+      <Container className={classes["shop-page"]}>
+        <PageHeader title="SHOP" />
+        <section className="shop-body">
         <Row>
           {/* Sidebar */}
           <Col lg={3}>
@@ -104,27 +107,27 @@ const ShopPage = () => {
 
             {/* Phân trang */}
             <Pagination className={classes["pagination"]}>
-              <Pagination.Prev
+              <Pagination.Prev className={classes["page-item"]}
                   onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
                   disabled={currentPage === 1}
               />
               {[...Array(Math.ceil(filteredProducts.length / productsPerPage))].map((_, index) => (
-                  <Pagination.Item
-                      key={index + 1}
+                  <Pagination.Item     className={`${classes["page-item"]} ${index + 1 === currentPage ? classes.active : ""}`}
+                     key={index + 1}
                       active={index + 1 === currentPage}
-                      onClick={() => setCurrentPage(index + 1)}
-                  >
+                      onClick={() => setCurrentPage(index + 1)}>
                     {index + 1}
                   </Pagination.Item>
               ))}
-              <Pagination.Next
+              <Pagination.Next className={classes["page-item"]}
                   onClick={() => setCurrentPage((prev) => Math.min(prev + 1, Math.ceil(filteredProducts.length / productsPerPage)))}
                   disabled={currentPage === Math.ceil(filteredProducts.length / productsPerPage)}
               />
             </Pagination>
           </Col>
         </Row>
-      </div>
+        </section>
+      </Container>
   );
 };
 

@@ -6,13 +6,13 @@ import Popup from "../../components/Popup";
 
 const HomePage = () => {
   return (
-    <>
+    <div className="container">
       <Banner />
       <Categories />
       <TopProduct />
       <Other />
       <Popup />
-    </>
+    </div>
   );
 };
 

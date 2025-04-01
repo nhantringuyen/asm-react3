@@ -1,0 +1,40 @@
+tr td {
+    padding: 12px;
+    border: none;
+    text-align: center;
+}
+
+.cartItemImage {
+    width: 75px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.quantityControl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.quantityControl button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+.quantityText {
+    margin: 0 10px;
+    font-weight: bold;
+}
+button.removeButton {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #000;
+}
+.product-title{
+    font-size: 18px;
+}
+td.price{
+    color: #bfcecb;
+}

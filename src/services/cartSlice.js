@@ -42,8 +42,12 @@ const cartSlice = createSlice({
             state.listCart = state.listCart.filter((item) => item._id.$oid !== action.payload);
             localStorage.setItem("cart", JSON.stringify(state.listCart));
         },
+        CLEAR_CART: (state) => {
+            state.listCart = [];
+            localStorage.removeItem("cart"); // Xóa dữ liệu khỏi localStorage
+        },
     },
 });
 
-export const { ADD_CART, UPDATE_CART, DELETE_CART } = cartSlice.actions;
+export const { ADD_CART, UPDATE_CART, DELETE_CART, CLEAR_CART  } = cartSlice.actions;
 export default cartSlice.reducer;

@@ -1,0 +1,126 @@
+.checkoutContainer{
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+.title {
+    font-style: italic;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+.formSection {
+    padding-right: 50px;
+}
+.form-label{
+    font-style: italic;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #6c757d;
+    display: block;
+    margin-bottom: 5px;
+}
+.checkout-form .inputField {
+    height: 40px;
+    font-size: 14px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 8px 12px;
+    color: #495057;
+    background-color: #fff;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.checkout-form .inputField::placeholder {
+    color: #adb5bd;
+}
+.checkout-form .inputField:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+.checkout-form .placeOrderButton {
+    background-color: #333;
+    color: #fff;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 400;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0;
+    cursor: pointer;
+    width: 180px;
+    text-align: center;
+    transition: opacity 0.2s ease-in-out;
+}
+.checkout-form .placeOrderButton:hover {
+    opacity: 0.8;
+}
+.orderSummary {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 0;
+    width: 100%;
+    max-width: 400px;
+    border: none;
+}
+.orderTitle {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.separator {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+}
+.orderItem {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0;
+}
+.itemInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+.itemName {
+    font-style: italic;
+    font-weight: 600;
+}
+.itemPrice {
+    font-size: 13px;
+    color: #888;
+    font-style: italic;
+}
+.itemDivider {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 5px 0;
+}
+.totalSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #4d4d4d;
+    margin-top: 10px;
+}
+.totalLabel {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.totalAmount {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #4d4d4d;
+}
+.emptyCart {
+    text-align: center;
+    font-size: 14px;
+    color: gray;
+}

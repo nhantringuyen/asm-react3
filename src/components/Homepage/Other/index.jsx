@@ -1,9 +1,9 @@
 import React from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-
+import classes from "./Other.module.css";
 const PromotionSection = () => {
   return (
-    <Container fluid className="mt-5">
+    <section className="mt-5">
       {/* Phần thông tin khuyến mãi */}
       <Row className="bg-light py-4 text-center">
         <Col md={4}>
@@ -27,7 +27,7 @@ const PromotionSection = () => {
           <p className="text-muted">Nisi nisi tempor consequat laboris nisi.</p>
         </Col>
         <Col md={6}>
-          <Form className="d-flex">
+          <Form className={`${classes["form-subscribe"]} d-flex`}>
             <Form.Control
               type="email"
               placeholder="Enter your email address"
@@ -39,7 +39,7 @@ const PromotionSection = () => {
           </Form>
         </Col>
       </Row>
-    </Container>
+    </section>
   );
 };
 

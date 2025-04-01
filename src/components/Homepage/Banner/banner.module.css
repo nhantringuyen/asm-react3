@@ -1,0 +1,16 @@
+.banner-sec{
+    padding: 100px 30px;
+    background-color: #f4f5f9;
+    overflow: hidden;
+}
+.banner-sec .col-left{
+    position: relative;
+    z-index: 1;
+}
+.banner-sec img{
+    width: 200%;
+    transform: translateX(-39%);
+}
+.banner-sec a{
+    border-radius: 0;
+}

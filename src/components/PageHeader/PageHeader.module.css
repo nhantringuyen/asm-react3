@@ -1,0 +1,30 @@
+.headerContainer {
+    background-color: #f8f9fa;
+    padding: 80px 50px;
+    margin-bottom: 40px;
+}
+
+.headerContainer .title {
+    font-style: italic;
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.breadcrumb {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.breadcrumb span {
+    font-style: italic;
+}
+
+.breadcrumb .current {
+    color: #adb5bd;
+}
+
+/* Style cho title hiển thị ở góc phải khi không có breadcrumb */
+.ghostTitle {
+    font-style: italic;
+    color: #adb5bd; /* Màu xám nhẹ */
+}

@@ -1,18 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Modal, Button, Container , Row, Col} from "react-bootstrap"; // Import Bootstrap Modal
 import {hidePopup} from "../../services/actions";
 import classes from "./Popup.module.css";
-import {useNavigate} from "react-router-dom"; // Import module CSS
+import {useNavigate, useLocation} from "react-router-dom"; // Import module CSS
 
 
 const Popup = () => {
   const dispatch = useDispatch();
     const navigate = useNavigate();
+    const location = useLocation();
   const { isPopupVisible, product } = useSelector((state) => state.popup);
 
-  if (!isPopupVisible) return null;
+
+    useEffect(() => {
+        return () => {
+            dispatch(hidePopup()); // Reset popup khi rời khỏi trang danh sách sản phẩm
+        };
+    }, [location.pathname]);
+    if (!isPopupVisible) return null;
     const handleClick = () => {
+        dispatch(hidePopup());
         navigate(`/product/${product._id.$oid}`);
     };
   return (
@@ -31,12 +39,12 @@ const Popup = () => {
                   </Col>
                   <Col lg={6}>
                         <h4>{product?.name}</h4>
-                      <p>
-                          <strong>Giá:</strong> {product?.price?.toLocaleString()} VND
+                      <p className={classes.price}>
+                          {product?.price?.toLocaleString()} VND
                       </p>
                     <p>{product?.short_desc}</p>
                     <p>{product.long_desc}</p>
-                    <Button type="button" className="btn-black" onClick={handleClick}>
+                    <Button type="button" className={`${classes["btn-view"]} btn-black`} onClick={handleClick}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                              className="bi bi-cart" viewBox="0 0 16 16">
                             <path

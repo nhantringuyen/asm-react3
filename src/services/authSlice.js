@@ -9,16 +9,16 @@ const authSlice = createSlice({
         user: storedUser || null, // Nếu có user trong localStorage, giữ trạng thái đăng nhập
     },
     reducers: {
-        onLogin: (state, action) => {
+        ON_LOGIN: (state, action) => {
             state.user = action.payload;
             localStorage.setItem("currentUser", JSON.stringify(action.payload));
         },
-        onLogout: (state) => {
+        ON_LOGOUT: (state) => {
             state.user = null;
             localStorage.removeItem("currentUser");
         },
     },
 });
 
-export const { onLogin, onLogout } = authSlice.actions;
+export const { ON_LOGIN, ON_LOGOUT } = authSlice.actions;
 export default authSlice.reducer;

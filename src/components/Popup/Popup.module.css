@@ -1,0 +1,11 @@
+.modal-header{
+    border-bottom: 0;
+}
+.price{
+    color: gray;
+    font-style: italic;
+}
+button.btn-view{
+    border:none;
+    padding: 5px 20px
+}

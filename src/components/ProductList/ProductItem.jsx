@@ -17,15 +17,15 @@ const ProductItem = ({ product, isTopProduct }) => {
   };
 
   return (
-    <Card className={classes["product-card"]} onClick={handleClick}>
+    <div className={classes["product-card"]} onClick={handleClick}>
       <Card.Img variant="top" src={product.img1} alt={product.name} />
-      <Card.Body>
-        <Card.Title>{product.name}</Card.Title>
+      <Card.Body className="text-center">
+        <h4 className={classes["product-title"]}>{product.name}</h4>
         <Card.Text className={classes.price}>
             {product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} VND
         </Card.Text>
       </Card.Body>
-    </Card>
+    </div>
   );
 };
 

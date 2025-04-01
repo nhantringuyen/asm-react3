@@ -1,13 +1,11 @@
 import { Link } from "react-router-dom";
-import bannerImage from "../../../assets/banner1.jpg"; // Đảm bảo ảnh tồn tại
-
+import bannerImage from "../../../assets/banner1.jpg";
+import classes from "./banner.module.css";
 const Banner = () => {
   return (
-    <div className="container-fluid bg-light py-5">
-      <div className="container">
+    <section className={classes["banner-sec"]}>
         <div className="row align-items-center">
-          {/* Nội dung bên trái */}
-          <div className="col-md-6 text-start">
+          <div className={`${classes["col-left"]} col-md-6 text-start`}>
             <p className="text-muted text-uppercase small">
               New Inspiration 2020
             </p>
@@ -16,14 +14,11 @@ const Banner = () => {
               Browse collections
             </Link>
           </div>
-
-          {/* Hình ảnh bên phải */}
-          <div className="col-md-6 text-center">
+          <div className="col-md-6">
             <img src={bannerImage} alt="Clock" className="img-fluid" />
           </div>
         </div>
-      </div>
-    </div>
+    </section>
   );
 };
 

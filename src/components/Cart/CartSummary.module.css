@@ -1,0 +1,53 @@
+.cartSummary-inner{
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.price {
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    font-style: italic;
+}
+.price strong{
+    font-weight: 600;
+}
+.price span {
+    color: #bfcecb;
+}
+.cartSummary-inner .total-price span{
+    font-size: 18px;
+    color: #000;
+}
+.cartSummary-inner .summary-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+.cartSummary-inner strong{
+    font-weight: 600
+}
+.couponInput {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+}
+.applyCoupon {
+    width: 100%;
+    background-color: black;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 0;
+}
+.applyCoupon svg{
+    fill: #fff;
+    margin-right: 5px;
+}
+.applyCoupon:hover {
+    background-color: #333;
+}

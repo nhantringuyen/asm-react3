@@ -1,0 +1,67 @@
+.form-group{
+    margin-bottom: 10px;
+}
+/* Căn giữa form */
+.checkout-page {
+    background-image: url("../../assets/banner1.jpg");
+    background-size: 95%;
+    background-color: #dedede;
+    background-position: top right;
+}
+.signup-card {
+    width: 400px;
+    padding: 20px;
+}
+
+.signup-title {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #ccc;
+    box-shadow: none;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 12px 0;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-top: 15px;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 15px;
+    color: #666;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}

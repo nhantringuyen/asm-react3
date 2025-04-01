@@ -1,10 +1,11 @@
+import classes from './footer.module.css'
 const Footer = () => {
   return (
-    <footer className="bg-dark text-light py-4">
+    <footer className="text-light">
       <div className="container">
         <div className="row">
           <div className="col-md-4">
-            <h5 className="text-warning">CUSTOMER SERVICES</h5>
+            <h5>CUSTOMER SERVICES</h5>
             <ul className="list-unstyled">
               <li>
                 <a href="#" className="text-light">
@@ -29,7 +30,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="col-md-4">
-            <h5 className="text-warning">COMPANY</h5>
+            <h5>COMPANY</h5>
             <ul className="list-unstyled">
               <li>
                 <a href="#" className="text-light">
@@ -54,7 +55,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="col-md-4">
-            <h5 className="text-warning">SOCIAL MEDIA</h5>
+            <h5>SOCIAL MEDIA</h5>
             <ul className="list-unstyled">
               <li>
                 <a href="#" className="text-light">
